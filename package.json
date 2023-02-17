@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/annabessant/ES6-Node.js-Professional-README-Generator/blob/main/README.md",
   "dependencies": {
-    "inquirer": "^6.5.0"
+    "inquirer": "^6.5.2"
   }
 }
