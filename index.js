@@ -45,24 +45,23 @@ function promptUser() {
         }
     }
   
-           // Table of Contents STOPPED ? I     nstallation is correct below
+        // Table of Contents 
     {
         type: "input",
-        name: "installation",
-        message: "What are the steps required to install your project? (Required):",
+        name: "table of content",
+        message: "Do you want to add table of content? (optional):",
         validate: installationInput => {
-            if (installationInput) {
+            if (tableOfContentInput) {
                 return true;
             }
             else {
-                console.log("This is a required information. Please provide installation steps");
+                console.log("This infomation is optional. In case you still want to add it");
                 return false;
             }
         }
     }
 
-
-            // Installation     
+        // Installation     
     {
         type: "input",
         name: "installation",
@@ -78,7 +77,44 @@ function promptUser() {
             }
     }
 
+
+        // License https://choosealicense.com/licenses/   
+    {
+        type: "list",
+        name: "license",
+        message: "Please let other developers know what they can and cannot do with your project by choosing a license (Required):",
+        choices: [GNU AGPLv3, GNU GPLv3, GNU LGPLv3, Mozilla Public License 2.0, Apache License 2.0, MIT License, Boost Software License 1.0, The Unlicense]
+        validate: installationInput => {
+            if (licenseInput) {
+                return true;
+            }
+                else {
+                    console.log("This is a required information. Please select the project license");
+                    return false;
+                }
+            }
+    }
+
+        // Contributors     
+    {
+        type: "input",
+        name: "contributors",
+        message: "Would like other developers to contribute? (Required):",
+        validate: contributorsInput => {
+            if (contributorsInput) {
+                return true;
+            }
+                else {
+                        console.log("This is a required information. Please leave a message for potential contributors");
+                        return false;
+                }
+            }
+    }
+
+    ///
+
     ])
+    .then 
 }
 
 
