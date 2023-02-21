@@ -1,4 +1,5 @@
 # t
+  ![App License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Description
 
@@ -28,7 +29,7 @@ t
 
 ## License
 
-This project is licensed under MIT License.
+This project is licensed under MIT.
 
 ## Contributing
 
