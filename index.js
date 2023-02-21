@@ -144,9 +144,89 @@ function promptUser() {
             }
         }
     ])
-    .then 
-}
+    .then((answers) => {
+        // Save answers
+        answersObject = answers;
+        // Make a file, including license badge from https://shields.io/category/license 
+        fs.writeFile(
+            `./${answersObject.title}-README.md`,
+        
+            # ${answersObject.title}
+        [![License: ${answersObject.license}](https://img.shields.io/badge/License-$%7BanswersObject.license}-green.icon)](https://choosealicense.com/licenses/)
+        
+        **Description**: ${answersObject.description}
 
+        **Deployment links**: n/a
+
+        ## Table of Counts
+        
+        * [Installation](#installation)
+        * [Usage](#usage)
+        * [Creadits](#credits)
+        * [License](#license)
+
+        ### Installation
+        ${answersObject.installation}
+
+        ### License
+        ${answersObject.license}
+
+        ### Contributors
+        ${answersObject.contributors}
+
+        ### Testing
+        ${answersObject.testing}
+
+        ### Questions
+        Please [email] (${answersObject.email}) me if you have any follow-up questions.
+        Alternatively, you can contact me via [GitHub] (https://github.com/${answersObject.github}) profile. 
+    }
+    )
+
+
+// writeFile(file: fs.PathOrFileDescriptor, data: string | NodeJS.ArrayBufferView, options: fs.WriteFileOptions, callback: fs.NoParamCallback): void
+
+// When file is a filename, asynchronously writes data to the file, replacing the file if it already exists. data can be a string or a buffer.
+
+// When file is a file descriptor, the behavior is similar to callingfs.write() directly (which is recommended). See the notes below on using a file descriptor.
+
+// The encoding option is ignored if data is a buffer.
+
+// The mode option only affects the newly created file. See open for more details.
+
+import { writeFile } from 'fs';
+import { Buffer } from 'buffer';
+
+const data = new Uint8Array(Buffer.from('Hello Node.js'));
+writeFile('message.txt', data, (err) => {
+  if (err) throw err;
+  console.log('The file has been saved!');
+});
+If options is a string, then it specifies the encoding:
+
+import { writeFile } from 'fs';
+
+writeFile('message.txt', 'Hello Node.js', 'utf8', callback);
+// It is unsafe to use fs.writeFile() multiple times on the same file without waiting for the callback. For this scenario, createWriteStream is recommended.
+
+// Similarly to fs.readFile - fs.writeFile is a convenience method that performs multiple write calls internally to write the buffer passed to it. For performance sensitive code consider using createWriteStream.
+
+// It is possible to use an AbortSignal to cancel an fs.writeFile(). Cancelation is "best effort", and some amount of data is likely still to be written.
+
+import { writeFile } from 'fs';
+import { Buffer } from 'buffer';
+
+const controller = new AbortController();
+const { signal } = controller;
+const data = new Uint8Array(Buffer.from('Hello Node.js'));
+writeFile('message.txt', data, { signal }, (err) => {
+  // When a request is aborted - the callback is called with an AbortError
+});
+// When the request should be aborted
+controller.abort();
+// Aborting an ongoing request does not abort individual operating system requests but rather the internal buffering fs.writeFile performs.
+
+@since — v0.1.29
 
 
 
