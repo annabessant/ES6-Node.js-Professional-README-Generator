@@ -135,7 +135,7 @@ const questions = [
         {
             type: "input",
             name: "github",
-            message: "Please leave your GitHub username for questions, if any (Required):",
+            message: "Please leave your GitHub username for any questions (Required):",
             // validate: contactInput => {
             //     if (contactInput) {
             //     return true;
@@ -146,18 +146,18 @@ const questions = [
             //     }
             // }
         },
-    ]);
+    ];
 
 // function to create README file
-function writeToFile(fileName = "README.md", text) {
+function writeToFile(fileName = "ReadME.md", text) {
     fs.writeFile(fileName, text, (err) =>
-    err ? console.log (err): console.log(done)
+    err ? console.log (err): console.log("done")
     );
 }
 
 // to activate the programme
 function init() {
-    inquirer.createPromptModule(questions).then((answers) => {
+    inquirer.prompt(questions).then((answers) => {
         const markedDown = generateMarkdown(answers);
         const text = (Object.values(markedDown)).join("");
         console.log(text);
@@ -169,6 +169,14 @@ function init() {
     });
 }
 init();
+
+
+
+
+
+
+
+
 
 
     // .then((answers) => {
@@ -254,11 +262,6 @@ init();
 // Aborting an ongoing request does not abort individual operating system requests but rather the internal buffering fs.writeFile performs.
 
 // @since — v0.1.29
-
-
-
-
-
 
 
 
