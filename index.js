@@ -83,7 +83,7 @@ const questions = [
             type: "list",
             name: "license",
             message: "Please let other developers know what they can and cannot do with your project by choosing a license (Required):",
-            choices: ["GNU AGPLv3", "GNU GPLv3", "GNU LGPLv3", "Mozilla Public License 2.0", "Apache License 2.0", "MIT License"]
+            choices: ["GNU AGPLv3", "GNU GPLv3", "GNU LGPLv3", "Mozilla Public License 2.0", "Apache License 2.0", "MIT License"],
             filter(val) {
                 return val;
             },
@@ -154,6 +154,22 @@ function writeToFile(fileName = "README.md", text) {
     err ? console.log (err): console.log(done)
     );
 }
+
+// to activate the programme
+function init() {
+    inquirer.createPromptModule(questions).then((answers) => {
+        const markedDown = generateMarkdown(answers);
+        const text = (Object.values(markedDown)).join("");
+        console.log(text);
+        let current = path.resolve();
+        fs.mkdir(`./generated`, { recursive: true }, (err) => {
+            if (err) throw err;
+        });
+        writeToFile(`./generated/README.md`, text);
+    });
+}
+init();
+
 
     // .then((answers) => {
     //     // Save answers
