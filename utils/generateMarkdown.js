@@ -19,6 +19,19 @@ ${data.description}
 * [Tests](#tests)
 
 * [Questions](#questions)
+
+## Installation
+
+${data.installation}
+
+## Usage
+
+${data.usage}
+
+## License
+
+This project is licensed under ${data.license}.
+
 `;
 }
 

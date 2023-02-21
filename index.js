@@ -146,6 +146,21 @@ const questions = [
             //     }
             // }
         },
+
+        {
+            type: "input",
+            name: "usage",
+            message: "Please provide usage instructions for your app? (Required):",
+            // validate: contributorsInput => {
+            //     if (contributorsInput) {
+            //         return true;
+            //     }
+            //     else {
+            //         console.log("This is a required information. Please leave a message for potential contributors");
+            //         return false;
+            //     }
+            // }
+        },
     ];
 
 // function to create README file

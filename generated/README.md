@@ -17,3 +17,16 @@ t
 * [Tests](#tests)
 
 * [Questions](#questions)
+
+## Installation
+
+t
+
+## Usage
+
+t
+
+## License
+
+This project is licensed under MIT License.
+
