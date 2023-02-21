@@ -34,7 +34,6 @@ const questions = [
             message: "What are the steps required to install your project? (Required):",
         },
 
-
         // License https://choosealicense.com/licenses/  
         {
             type: "list",
@@ -53,7 +52,6 @@ const questions = [
             message: "Would like other developers to contribute? (Required):",
         },
 
-
         //  Tests     
         {
             type: "input",
@@ -67,6 +65,8 @@ const questions = [
             name: "github",
             message: "Please leave your GitHub username for any questions (Required):",
         },
+        
+        // Usage
 
         {
             type: "input",
@@ -96,7 +96,3 @@ function init() {
     });
 }
 init();
-
-
-
-
