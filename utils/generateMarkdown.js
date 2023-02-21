@@ -32,6 +32,18 @@ ${data.usage}
 
 This project is licensed under ${data.license}.
 
+## Contributing
+
+${data.contributing}
+
+## Tests
+
+${data.tests}
+
+## Questions
+
+For any questions about this project contact me directly at ${data.email}.  You can also find my other repos at [${data.github}](https://github.com/${data.github}/).
+
 `;
 }
 

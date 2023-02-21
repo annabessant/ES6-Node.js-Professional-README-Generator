@@ -30,3 +30,15 @@ t
 
 This project is licensed under MIT License.
 
+## Contributing
+
+undefined
+
+## Tests
+
+undefined
+
+## Questions
+
+For any questions about this project contact me directly at undefined.  You can also find my other repos at [t](https://github.com/t/).
+
