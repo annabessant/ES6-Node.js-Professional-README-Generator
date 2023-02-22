@@ -45,17 +45,17 @@ const questions = [
             },
         },
 
-        // Contributors     
+        // Contributing     
         {
             type: "input",
-            name: "contributors",
+            name: "contributing",
             message: "Would like other developers to contribute? (Required):",
         },
 
         //  Tests     
         {
             type: "input",
-            name: "testing",
+            name: "tests",
             message: "Please provide guidelines for testing your application (Required):",
         },
 

@@ -21,7 +21,7 @@ Creates a command-line application that dynamically generates a professional REA
 
 ## Demo video
 
-[![Watch the video](/relative/path/to/)]
+[![Watch the video](https://watch.screencastify.com/v/zXTWfzLMnpdB0AbBDkT5]
 
 ## Link to Repo
 
